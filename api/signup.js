@@ -36,10 +36,9 @@ module.exports = async (req, res) => {
         .from('Event')
         .insert([
           {
-            id: 2,
+            id:"2",
             name: "test",
             description: "test"
-              
           },
         ]);
 
