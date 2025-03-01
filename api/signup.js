@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
         .from('Event')
         .insert([
           {
-            id:2,
+            id:3,
             created_at:"2025-03-01 14:14:46.241811+00",
             name: "test",
             description: "test"
