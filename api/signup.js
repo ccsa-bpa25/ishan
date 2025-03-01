@@ -37,8 +37,8 @@ module.exports = async (req, res) => {
         .insert([
           {
             
-            name: "test",
-            description: "test"
+            name: HTMLInputElement,
+            description: HTMLInputElement
           },
         ]);
 
