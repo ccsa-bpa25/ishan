@@ -34,13 +34,7 @@ module.exports = async (req, res) => {
       // Insert user data into the PostgreSQL database (additional table in Supabase)
       const { data, error: dbError } = await supabase
         .from('events')
-        .insert([
-          {
-            
-            name: HTMLInputElement,
-            description: HTMLInputElement
-          },
-        ]);
+        .insert([]);
 
       if (dbError) {
         console.error('Error inserting into database:', dbError);
