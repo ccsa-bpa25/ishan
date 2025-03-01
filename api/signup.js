@@ -33,11 +33,10 @@ module.exports = async (req, res) => {
 
       // Insert user data into the PostgreSQL database (additional table in Supabase)
       const { data, error: dbError } = await supabase
-        .from('Event')
+        .from('events')
         .insert([
           {
-            id:3,
-            created_at:"2025-03-01 14:14:46.241811+00",
+            
             name: "test",
             description: "test"
           },
