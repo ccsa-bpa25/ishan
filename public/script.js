@@ -1,3 +1,12 @@
+const { createClient } = require('@supabase/supabase-js');
+const bcrypt = require('bcryptjs');
+
+// Initialize Supabase client with environment variables
+const supabase = createClient(
+  process.env.SUPABASE_URL, 
+  process.env.SUPABASE_KEY
+);
+
 let currentDate = new Date();
 let events = [];
 let selectedEventIndex = -1;  // To keep track of the event being updated or deleted
