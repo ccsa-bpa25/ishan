@@ -1,4 +1,4 @@
-const { createClient } = require('@supabase/supabase-js');
+/*const { createClient } = require('@supabase/supabase-js');
 const bcryptjs = require('bcryptjs');
 
 // Initialize Supabase client with environment variables
@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
       // Check if the user exists in the 'users' table
       const { data, error } = await supabase
         .from('Events')
-        .select()
+        .select();
         //.eq('username', username)
         //.();
 
@@ -47,4 +47,4 @@ module.exports = async (req, res) => {
   } else {
     return res.status(405).json({ error: 'Method Not Allowed. Use POST.' });
   }
-};
+};*/
