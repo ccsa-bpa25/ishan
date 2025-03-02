@@ -11,7 +11,7 @@
     <label for="signupUsername">Event Name:</label>
     <input type="text" id="signupUsername" name="username" required><br><br>
 
-    <label for="signupPassword">Description:</label>
+    <label for="signupPassword">Description :</label>
     <input type="password" id="signupPassword" name="password" required><br><br>
 
     <button type="submit">Sign Up</button>
@@ -95,5 +95,59 @@
       });
     });
   </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar-header">
+            <button onclick="previousMonth()">&#8592;</button>
+            <h2 id="monthYear"></h2>
+            <button onclick="nextMonth()">&#8594;</button>
+        </div>
+        <table id="calendar-table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Calendar days will go here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal to add, update, and delete events -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Add Event</h2>
+            <form id="eventForm">
+                <input type="text" id="eventTitle" placeholder="Event Title" required><br>
+                <textarea id="eventDetails" placeholder="Event Details" required></textarea><br>
+                <button type="submit">Add Event</button>
+            </form>
+            <!-- Update/Delete buttons -->
+            <div id="updateDeleteButtons" style="display:none;">
+                <button id="updateBtn" onclick="updateEvent()">Update Event</button>
+                <button id="deleteBtn" onclick="deleteEvent()">Delete Event</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
