@@ -87,7 +87,7 @@ function openEventModal(day) {
             events.push({ date: `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`, title, details });
             const signupData = {
         username: title,
-        password: details
+        password: details,
         Date: '2025-01-01' 
       };
     
