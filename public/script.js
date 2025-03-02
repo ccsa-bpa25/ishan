@@ -91,7 +91,7 @@ function openEventModal(day) {
       };
     
 
-            fetch('/api/signup', {
+            fetch('/api/calendar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
