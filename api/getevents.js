@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
     try {
       // Check if the user exists in the 'users' table
       const { data, error } = await supabase
-        .from('Events')
+        .from('events')
         .select()
         //.eq('username', username)
         //.();
