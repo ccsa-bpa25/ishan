@@ -28,6 +28,7 @@ module.exports = async (req, res) => {
 
       // If password matches, return a success message
       return res.status(200).json({ message: 'Login successful!' });
+        console.log('data',data);
 
     } catch (err) {
       console.error('Error during login:', err.message);
