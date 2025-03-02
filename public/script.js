@@ -81,6 +81,7 @@ function openEventModal(day) {
         
         const title = document.getElementById('eventTitle').value;
         const details = document.getElementById('eventDetails').value;
+        const eventdate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`;
         
         if (selectedEventIndex === -1) {
             // Add new event
@@ -88,7 +89,7 @@ function openEventModal(day) {
             const signupData = {
         username: title,
         password: details,
-        Date: '2025-01-01' 
+        Date: eventdate; 
       };
     
 
