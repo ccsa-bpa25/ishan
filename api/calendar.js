@@ -9,7 +9,7 @@ const supabase = createClient(
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
-    const { username, password } = req.body;
+    const { username, password, Date } = req.body;
 
     // Validate that username and password are provided
     if (!username || !password) {
@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
 
     try {
       // Check if the username already exists in the PostgreSQL 'users' table
-      const { data: existingUser, error: authError } = await supabase
+     /* const { data: existingUser, error: authError } = await supabase
         .from('users')
         .select('username')
         .eq('username', username)
@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
 
       // Hash the password for PostgreSQL storage (if needed)
       const hashedPassword = await bcrypt.hash(password, 10);
-
+*/
       // Insert user data into the PostgreSQL database (additional table in Supabase)
       const { data, error: dbError } = await supabase
         .from('events')
