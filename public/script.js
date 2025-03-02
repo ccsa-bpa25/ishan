@@ -165,7 +165,7 @@ function nextMonth() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(signupData)
+       // body: JSON.stringify(signupData)
       })
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar();
