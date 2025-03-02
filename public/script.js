@@ -92,20 +92,20 @@ function openEventModal(day) {
       };
     
 
-            /*fetch('/api/calendar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(signupData)
-      })*/
-                fetch('/api/getevents', {
+            fetch('/api/calendar', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(signupData)
       })
+                /*fetch('/api/getevents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(signupData)
+      })*/
       .then(response => response.json())
       .then(data => {
         if (data.message) {
