@@ -9,6 +9,9 @@ const supabase = createClient(
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
+      alert(username);
+      alert(password);
+      alert(Date);
     const { username, password, Date } = req.body;
 
     // Validate that username and password are provided
