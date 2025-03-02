@@ -17,23 +17,12 @@ module.exports = async (req, res) => {
       // Check if the user exists in the 'users' table
       const { data, error } = await supabase
         .from('Events')
-        .select();
+        .select()
         //.eq('username', username)
         //.();
 
       if (error) {
         console.error('Supabase error:', error.message);
-        return res.status(400).json({ error: 'Invalid username or password.' });
-      }
-
-      if (!user) {
-        return res.status(400).json({ error: 'Invalid username or password.' });
-      }
-
-      // Compare the password with the hashed password in the database
-      const isMatch = await bcryptjs.compare(password, user.password);
-
-      if (!isMatch) {
         return res.status(400).json({ error: 'Invalid username or password.' });
       }
 
