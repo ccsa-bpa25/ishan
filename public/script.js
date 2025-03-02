@@ -89,7 +89,7 @@ function openEventModal(day) {
             const signupData = {
         username: title,
         password: details,
-        Date: eventdate; 
+        Date: eventdate 
       };
     
 
