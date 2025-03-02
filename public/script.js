@@ -3,6 +3,7 @@ let events = [];
 let selectedEventIndex = -1;  // To keep track of the event being updated or deleted
 
 function renderCalendar() {
+    alert("inside render calendar");
     const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendar-body');
     
@@ -39,6 +40,7 @@ function renderCalendar() {
 }
 
 function openEventModal(day) {
+    alert("inside open event modal");
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
     
@@ -92,6 +94,7 @@ function closeModal() {
 }
 
 function updateEvent() {
+    alert("inside update calendar");
     const title = document.getElementById('eventTitle').value;
     const details = document.getElementById('eventDetails').value;
 
@@ -103,6 +106,7 @@ function updateEvent() {
 }
 
 function deleteEvent() {
+    alert("inside delete calendar");
     // Delete the event
     events.splice(selectedEventIndex, 1);
     
@@ -111,11 +115,13 @@ function deleteEvent() {
 }
 
 function previousMonth() {
+    alert("inside previous calendar");
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar();
 }
 
 function nextMonth() {
+    alert("inside next calendar");
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar();
 }
