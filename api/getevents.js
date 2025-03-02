@@ -1,4 +1,4 @@
-/*const { createClient } = require('@supabase/supabase-js');
+const { createClient } = require('@supabase/supabase-js');
 const bcryptjs = require('bcryptjs');
 
 // Initialize Supabase client with environment variables
@@ -10,7 +10,7 @@ const supabase = createClient(
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
-    const { username, password } = req.body;
+    //const { username, password } = req.body;
 
 
     try {
@@ -47,4 +47,4 @@ module.exports = async (req, res) => {
   } else {
     return res.status(405).json({ error: 'Method Not Allowed. Use POST.' });
   }
-};*/
+};
