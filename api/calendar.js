@@ -38,7 +38,8 @@ module.exports = async (req, res) => {
           {
             
             name:username ,
-            description: password 
+            description: password,
+            date: Data  
           },
         ]);
 

@@ -88,6 +88,7 @@ function openEventModal(day) {
             const signupData = {
         username: title,
         password: details
+        Date: '2025-01-01' 
       };
     
 
