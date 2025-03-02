@@ -1,4 +1,4 @@
-Javascript : let currentDate = new Date();
+let currentDate = new Date();
 let events = [];
 let selectedEventIndex = -1;  // To keep track of the event being updated or deleted
 
