@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
       //alert(username);
       //alert(password);
       //alert(Date);
-    const { username, password, Date } = req.body;
+    const { username, password, eventdate } = req.body;
 
     // Validate that username and password are provided
     if (!username || !password) {
@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
             
             name:username ,
             description: password,
-            date: Date  
+            eventdate: eventdate  
           },
         ]);
 
