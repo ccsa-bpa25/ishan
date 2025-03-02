@@ -89,13 +89,14 @@ function openEventModal(day) {
         username: title,
         password: details
       };
+    
 
-      fetch('/api/login', {
+            fetch('/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(loginData)
+        body: JSON.stringify(signupData)
       })
       .then(response => response.json())
       .then(data => {
@@ -108,6 +109,8 @@ function openEventModal(day) {
       .catch(error => {
         document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
       });
+            
+      
         } else {
             // Update existing event
             events[selectedEventIndex] = { date: `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`, title, details };
