@@ -85,7 +85,7 @@ function openEventModal(day) {
         if (selectedEventIndex === -1) {
             // Add new event
             events.push({ date: `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${day}`, title, details });
-            const loginData = {
+            const signupData = {
         username: title,
         password: details
       };
