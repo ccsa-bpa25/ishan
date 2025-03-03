@@ -11,6 +11,214 @@
  
 
 </head>
+    <body>
+    <main>
+      <style>
+      nav ul li:hover {
+    background-color: #D1B89E; 
+}
+nav ul li.active {
+    background-color: #D1B89E; 
+}
+    nav .nav-inner {
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;
+            padding: 10px 30px;
+            width: 100%;
+        }
+
+       
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            padding: 10;
+            margin: 0;
+            justify-content: space-between; 
+            width: 100%;
+        }
+
+        nav ul li {
+            flex-shrink: 0;
+        }
+        nav ul li:hover {
+    background-color: #D1B89E; 
+}
+nav a:hover {
+    background-color: #D1B89E; 
+    color: black; 
+}
+header {
+  background-color: #d8bfd8; 
+  color: white;
+  padding: 20px;
+  nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 20px 20px; 
+            font-size: 14px; 
+            white-space: nowrap;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+       
+        nav a:hover {
+            background-color: #D1B89E; 
+            color: black;
+        }
+
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            flex-direction: column;
+        }
+
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+       
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: scrollReveal 1.5s forwards;
+        }
+
+        @keyframes scrollReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+          #torch-awards {
+            padding: 50px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+         h1, h3 {
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .dropdown-content a:hover {
+            background-color: #D1B89E;
+            color: black;
+        }
+
+        .arrow {
+            font-size: 12px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+        }
+
+        .hamburger-menu div {
+            height: 4px;
+            background-color: black;
+            border-radius: 2px;
+        }
+        
+           
+        #eventsLink {
+    color: black; 
+    text-decoration: none; 
+}
+        @media (max-width: 768px) {
+            .nav-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+           
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #fff;
+            }
+
+            nav ul li a {
+                padding: 10px 20px;
+                width: 100%;
+                text-align: left;
+            }
+
+           
+            .hamburger-menu {
+                display: flex;
+            }
+            
+            .nav-inner.active ul {
+                display: flex;
+            }
+
+            
+            nav ul li a {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
 <body>
   
     
