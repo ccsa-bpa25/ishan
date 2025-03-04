@@ -81,6 +81,7 @@ function renderCalendar() {
         }
     
     let calendarHTML = '';
+        month=month+1;
         let smonth=month.toString();
     smonth = smonth.padStart(2, '0');
         
