@@ -177,7 +177,7 @@ function nextMonth() {
     const isoString2 = elastDayT.toISOString(); // Converts to ISO string
     const elastDay = isoString2.split('T')[0];
     
-    const daysInMonth = lastDay.getDate();
+    //const daysInMonth = lastDay.getDate();
     
     const calData = {
         
