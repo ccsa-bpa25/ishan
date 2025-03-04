@@ -171,8 +171,15 @@ function nextMonth() {
     .then(response => response.json())
       .then(data => {
         if (data.message) {
-          document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
+         // document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
        console.log(data.message);
+             events = data.message.map(item => {
+    return {
+        title: item.name, // Rename 'name' to 'fullName'
+        date: item.eventdate,      // Rename 'age' to 'years'
+        details: item.description
+    };
+});
             console.log(events);
 /*for (const key in data.message()) {
     events.push({ key: key, value: data.message()[key] });
