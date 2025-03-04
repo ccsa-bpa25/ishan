@@ -172,8 +172,8 @@ function nextMonth() {
         if (data.message) {
           document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
        
-for (const key in response) {
-    events.push({ key: key, value: response[key] });
+for (const key in response.json()) {
+    events.push({ key: key, value: response.json()[key] });
 }
 console.log(events);
         } else {
