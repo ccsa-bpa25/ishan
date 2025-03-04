@@ -109,7 +109,7 @@ function renderCalendar() {
                 
                 const eventClass = hasEvent ? 'event-day' : '';
                 //console.log('event-day');
-                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${exactDate})">${exactDate}</td>`;
+                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${exactDate})">${dayNumber}</td>`;
             } else {
                 calendarHTML += '<td></td>';
             }
