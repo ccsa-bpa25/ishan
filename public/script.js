@@ -100,6 +100,7 @@ function renderCalendar() {
                 
                 //const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
                 const exactDate = syear+"-"+smonth+"-"+sdayNumber;
+                String stexactDate=exactDate.toString();
                 console.log(exactDate);
                 const hasEvent = events.some(event => {
     const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
@@ -109,7 +110,7 @@ function renderCalendar() {
                 
                 const eventClass = hasEvent ? 'event-day' : '';
                 //console.log('event-day');
-                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${exactDate})">${dayNumber}</td>`;
+                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${stexactDate})">${dayNumber}</td>`;
             } else {
                 calendarHTML += '<td></td>';
             }
