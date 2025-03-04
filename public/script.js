@@ -79,7 +79,7 @@ function renderCalendar() {
         } else {
           document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
         }
-    })
+    
     let calendarHTML = '';
     
     for (let i = 0; i < 6; i++) {
@@ -102,6 +102,7 @@ function renderCalendar() {
     }
     
     calendarBody.innerHTML = calendarHTML;
+        })
 }
 
 function openEventModal(day) {
