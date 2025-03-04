@@ -122,6 +122,7 @@ function renderCalendar() {
 }
 
 function openEventModal(day) {
+    console.log(typeof day);
     console.log("inside open event modal"+day);
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
