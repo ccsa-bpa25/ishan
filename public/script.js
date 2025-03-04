@@ -18,7 +18,7 @@ function renderCalendar() {
     
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
-    
+    const syear = year.toString();
     monthYear.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
     
     const firstDay = new Date(year, month, 1);
@@ -94,7 +94,15 @@ function renderCalendar() {
                 sdayNumber = sdayNumber.padStart(2, '0');
                 console.log(sdayNumber);
                 console.log(events.some(event => new Date(event.date).getDate()=== dayNumber));
-                const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
+                
+                //const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
+                const exactDate = syear+"-"+smonth+"-"+sdayNumber;
+                const hasEvent = events.some(event => {
+    const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
+    return eventDate === exactDate;
+});
+                
+                
                 const eventClass = hasEvent ? 'event-day' : '';
                 //console.log('event-day');
                 calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${dayNumber})">${dayNumber}</td>`;
