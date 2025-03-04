@@ -124,7 +124,7 @@ function renderCalendar() {
 
 function openEventModal(day,edate) {
     console.log(typeof edate);
-    console.log("inside open event modal"+day);
+    console.log("inside open event modal"+day+"-"+edate);
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
     
@@ -132,7 +132,7 @@ function openEventModal(day,edate) {
     //const event = events.find(event => new Date(event.date).getDate() === day);
 const event = events.some(event => {
     const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
-    return eventDate === day;
+    return eventDate === edate;
 });
     // If an event exists, show the Update/Delete buttons, otherwise show the Add form
     if (event) {
