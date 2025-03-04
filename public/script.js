@@ -12,7 +12,7 @@ let events = [];
 let selectedEventIndex = -1;  // To keep track of the event being updated or deleted
 
 function renderCalendar() {
-    alert("inside render calendar");
+    console.log('inside render calendar');
     const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendar-body');
     
@@ -160,13 +160,24 @@ function previousMonth() {
 
 function nextMonth() {
       console.log("inside next month.");
+    const emonthYear = document.getElementById('monthYear');
+    const ecalendarBody = document.getElementById('calendar-body');
+    
+    const emonth = currentDate.getMonth();
+    const eyear = currentDate.getFullYear();
+    
+    const calData = {
+        
+        emonth: emonth,
+        eyear: eyear 
+      };
 
     fetch('/api/getevents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-       //  body: JSON.stringify(signupData)
+         body: JSON.stringify(calData)
       })
     .then(response => response.json())
       .then(data => {

@@ -12,7 +12,8 @@ module.exports = async (req, res) => {
     console.log("This message will appear in the console.");
 
   if (req.method === 'POST') {
-    //const { username, password } = req.body;
+    const { emonth, eyear } = req.body;
+      const edateval=eyear+"-"+emonth+"%";
 
 
     try {
@@ -20,6 +21,7 @@ module.exports = async (req, res) => {
       const { data, error } = await supabase
         .from('events')
         .select()
+      .like('eventdate',edateval)
         //.eq('username', username)
         //.();
 
