@@ -129,13 +129,16 @@ function openEventModal(day,edate) {
     modal.style.display = 'flex';
     
     // Find the event for the clicked day, if any
-    //const event = events.find(event => new Date(event.date).getDate() === day);
-const event = events.some(event => {
+    sday1=day.toString();
+    sday1=sday1.padStart(2, '0');
+    //const event = events.find(event => new Date(event.date).getDate() === sday1);
+const eventexist = events.some(event => {
     const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
     return eventDate === edate;
 });
+    event=events.find(event => event.date === edate);
     // If an event exists, show the Update/Delete buttons, otherwise show the Add form
-    if (event) {
+    if (eventexist) {
         console.log("event yes");
         document.getElementById('modalTitle').textContent = "Update Event";
         document.getElementById('eventTitle').value = event.title;
