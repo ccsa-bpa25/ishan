@@ -92,7 +92,7 @@ function renderCalendar() {
             if (dayNumber > 0 && dayNumber <= daysInMonth) {
                 let sdayNumber=dayNumber.toString();
                 sdayNumber = sdayNumber.padStart(2, '0');
-                console.log(dayNumber);
+                console.log(sdayNumber);
                 console.log(events.some(event => new Date(event.date).getDate()=== dayNumber));
                 const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
                 const eventClass = hasEvent ? 'event-day' : '';
