@@ -109,7 +109,7 @@ function renderCalendar() {
                 
                 const eventClass = hasEvent ? 'event-day' : '';
                 //console.log('event-day');
-                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${dayNumber})">${dayNumber}</td>`;
+                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${eventDate})">${eventDate}</td>`;
             } else {
                 calendarHTML += '<td></td>';
             }
@@ -127,8 +127,11 @@ function openEventModal(day) {
     modal.style.display = 'flex';
     
     // Find the event for the clicked day, if any
-    const event = events.find(event => new Date(event.date).getDate() === day);
-
+    //const event = events.find(event => new Date(event.date).getDate() === day);
+const event = events.some(event => {
+    const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
+    return eventDate === day;
+});
     // If an event exists, show the Update/Delete buttons, otherwise show the Add form
     if (event) {
         console.log("event yes");
