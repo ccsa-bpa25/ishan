@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
       // If password matches, return a success message
             console.log("test")
       console.log('data',data);
-        return res.status(200).json({ message: 'Login successful!' });
+        return res.status(200).json({ message: data });
         
 
     } catch (err) {
