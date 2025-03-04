@@ -88,9 +88,11 @@ function renderCalendar() {
             const dayNumber = i * 7 + j - dayOfWeek + 1;
             
             if (dayNumber > 0 && dayNumber <= daysInMonth) {
+                console.log(dayNumber);
+                console.log(events.some(event => new Date(event.date).getDate()));
                 const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
                 const eventClass = hasEvent ? 'event-day' : '';
-                console.log('event-day');
+                //console.log('event-day');
                 calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${dayNumber})">${dayNumber}</td>`;
             } else {
                 calendarHTML += '<td></td>';
