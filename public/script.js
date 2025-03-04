@@ -27,6 +27,59 @@ function renderCalendar() {
     const daysInMonth = lastDay.getDate();
     
     let dayOfWeek = firstDay.getDay();
+    
+     const emonthYear = document.getElementById('monthYear');
+    const ecalendarBody = document.getElementById('calendar-body');
+    
+    const emonth = currentDate.getMonth();
+    const eyear = currentDate.getFullYear();
+    
+    const efirstDayT = new Date(eyear, emonth, 1);
+    const isoString1 = efirstDayT.toISOString(); // Converts to ISO string
+    const efirstDay = isoString1.split('T')[0];
+   
+    
+    const elastDayT = new Date(eyear, emonth + 1, 0);
+    const isoString2 = elastDayT.toISOString(); // Converts to ISO string
+    const elastDay = isoString2.split('T')[0];
+    
+    //const daysInMonth = lastDay.getDate();
+    
+    const calData = {
+        
+        efirstday: efirstDay,
+        elastday: elastDay 
+      };
+
+    fetch('/api/getevents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+         body: JSON.stringify(calData)
+      })
+    .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+         // document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
+       console.log(data.message);
+             events = data.message.map(item => {
+    return {
+        title: item.name, // Rename 'name' to 'fullName'
+        date: item.eventdate,      // Rename 'age' to 'years'
+        details: item.description
+    };
+});
+            console.log(events);
+/*for (const key in data.message()) {
+    events.push({ key: key, value: data.message()[key] });
+}*/
+            //events=data.message;
+//console.log(events);
+        } else {
+          document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
+        }
+    
     let calendarHTML = '';
     
     for (let i = 0; i < 6; i++) {
@@ -161,62 +214,11 @@ function previousMonth() {
 }
 
 function nextMonth() {
-      console.log("inside next month.");
-    const emonthYear = document.getElementById('monthYear');
-    const ecalendarBody = document.getElementById('calendar-body');
-    
-    const emonth = currentDate.getMonth();
-    const eyear = currentDate.getFullYear();
-    
-    const efirstDayT = new Date(eyear, emonth, 1);
-    const isoString1 = efirstDayT.toISOString(); // Converts to ISO string
-    const efirstDay = isoString1.split('T')[0];
+      //console.log("inside next month.");
    
-    
-    const elastDayT = new Date(eyear, emonth + 1, 0);
-    const isoString2 = elastDayT.toISOString(); // Converts to ISO string
-    const elastDay = isoString2.split('T')[0];
-    
-    //const daysInMonth = lastDay.getDate();
-    
-    const calData = {
-        
-        efirstday: efirstDay,
-        elastday: elastDay 
-      };
-
-    fetch('/api/getevents', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-         body: JSON.stringify(calData)
-      })
-    .then(response => response.json())
-      .then(data => {
-        if (data.message) {
-         // document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
-       console.log(data.message);
-             events = data.message.map(item => {
-    return {
-        title: item.name, // Rename 'name' to 'fullName'
-        date: item.eventdate,      // Rename 'age' to 'years'
-        details: item.description
-    };
-});
-            console.log(events);
-/*for (const key in data.message()) {
-    events.push({ key: key, value: data.message()[key] });
-}*/
-            //events=data.message;
-//console.log(events);
-        } else {
-          document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
-        }
-      })
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar();
-    alert()
+    
 }
 
 // Initial render
