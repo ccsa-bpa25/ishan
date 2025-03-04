@@ -159,9 +159,8 @@ function previousMonth() {
 }
 
 function nextMonth() {
-      console.log("This message will appear in the console.");
+      console.log("inside next month.");
 
-    alert("inside next calendar");
     fetch('/api/getevents', {
         method: 'POST',
         headers: {
@@ -173,7 +172,7 @@ function nextMonth() {
       .then(data => {
         if (data.message) {
           document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
-       
+       console.log(data.message);
 for (const key in data.message()) {
     events.push({ key: key, value: data.message()[key] });
 }
