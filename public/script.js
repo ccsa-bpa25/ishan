@@ -110,7 +110,7 @@ function renderCalendar() {
                 
                 const eventClass = hasEvent ? 'event-day' : '';
                 //console.log('event-day');
-                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${stexactDate})">${dayNumber}</td>`;
+                calendarHTML += `<td class="${eventClass}" onclick="openEventModal(${dayNumber},${stexactDate})">${dayNumber}</td>`;
             } else {
                 calendarHTML += '<td></td>';
             }
@@ -122,8 +122,8 @@ function renderCalendar() {
         })
 }
 
-function openEventModal(day) {
-    console.log(typeof day);
+function openEventModal(day,edate) {
+    console.log(typeof edate);
     console.log("inside open event modal"+day);
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
