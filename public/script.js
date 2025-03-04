@@ -159,6 +159,8 @@ function previousMonth() {
 }
 
 function nextMonth() {
+      console.log("This message will appear in the console.");
+
     alert("inside next calendar");
     fetch('/api/getevents', {
         method: 'POST',
