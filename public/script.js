@@ -81,13 +81,15 @@ function renderCalendar() {
         }
     
     let calendarHTML = '';
-    
+    month = month.padStart(2, '0');
+        
     for (let i = 0; i < 6; i++) {
         calendarHTML += '<tr>';
         for (let j = 0; j < 7; j++) {
             const dayNumber = i * 7 + j - dayOfWeek + 1;
             
             if (dayNumber > 0 && dayNumber <= daysInMonth) {
+                dayNumber = dayNumber.padStart(2, '0');
                 console.log(dayNumber);
                 console.log(events.some(event => new Date(event.date).getDate()=== dayNumber));
                 const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
