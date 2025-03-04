@@ -166,10 +166,13 @@ function nextMonth() {
     const emonth = currentDate.getMonth();
     const eyear = currentDate.getFullYear();
     
+    const efirstDay = new Date(eyear, emonth, 1);
+    const elastDay = new Date(eyear, emonth + 1, 0);
+    
     const calData = {
         
-        emonth: emonth,
-        eyear: eyear 
+        efirstday: efirstDay,
+        elastday: elastDay 
       };
 
     fetch('/api/getevents', {
