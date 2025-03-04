@@ -165,10 +165,19 @@ function nextMonth() {
         headers: {
           'Content-Type': 'application/json',
         },
-       // body: JSON.stringify(signupData)
+       //  body: JSON.stringify(signupData)
+      })
+    .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
+        } else {
+          document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
+        }
       })
     currentDate.setMonth(currentDate.getMonth() + 1);
     renderCalendar();
+    alert()
 }
 
 // Initial render
