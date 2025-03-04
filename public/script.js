@@ -153,6 +153,7 @@ function deleteEvent() {
 }
 
 function previousMonth() {
+    events=[];    
     alert("inside previous calendar");
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar();
