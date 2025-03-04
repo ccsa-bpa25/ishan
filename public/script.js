@@ -100,7 +100,7 @@ function renderCalendar() {
                 
                 //const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
                 const exactDate = syear+"-"+smonth+"-"+sdayNumber;
-                String stexactDate=exactDate.toString();
+                const stexactDate=exactDate.toString();
                 console.log(exactDate);
                 const hasEvent = events.some(event => {
     const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
