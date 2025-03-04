@@ -112,3 +112,15 @@ button[type="submit"]:hover,
 #updateBtn:hover, #deleteBtn:hover {
     background-color: #218838;
 }
+.close-btn {
+    color: #aaa; /* Button color */
+    float: right; /* Align to the top-right corner */
+    font-size: 28px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    cursor: pointer; /* Change cursor to a pointer */
+}
+
+.close-btn:hover {
+    color: #000; /* Darken color on hover */
+}
+
