@@ -95,8 +95,8 @@ function renderCalendar() {
             if (dayNumber > 0 && dayNumber <= daysInMonth) {
                 let sdayNumber=dayNumber.toString();
                 sdayNumber = sdayNumber.padStart(2, '0');
-                console.log(sdayNumber);
-                console.log(events.some(event => new Date(event.date).getDate()=== dayNumber));
+                //console.log(sdayNumber);
+                //console.log(events.some(event => new Date(event.date).getDate()=== dayNumber));
                 
                 //const hasEvent = events.some(event => new Date(event.date).getDate() === dayNumber);
                 const exactDate = syear+"-"+smonth+"-"+sdayNumber;
@@ -122,7 +122,7 @@ function renderCalendar() {
 }
 
 function openEventModal(day) {
-    alert("inside open event modal");
+    console.log("inside open event modal"+day);
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
     
@@ -131,6 +131,7 @@ function openEventModal(day) {
 
     // If an event exists, show the Update/Delete buttons, otherwise show the Add form
     if (event) {
+        console.log("event yes");
         document.getElementById('modalTitle').textContent = "Update Event";
         document.getElementById('eventTitle').value = event.title;
         document.getElementById('eventDetails').value = event.details;
@@ -139,6 +140,7 @@ function openEventModal(day) {
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
     } else {
+         console.log("event no");
         document.getElementById('modalTitle').textContent = "Add Event";
         document.getElementById('eventTitle').value = '';
         document.getElementById('eventDetails').value = '';
