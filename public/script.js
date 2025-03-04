@@ -22,6 +22,7 @@ function renderCalendar() {
     monthYear.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
     
     const firstDay = new Date(year, month, 1);
+    
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     
@@ -167,8 +168,16 @@ function nextMonth() {
     const emonth = currentDate.getMonth();
     const eyear = currentDate.getFullYear();
     
-    const efirstDay = new Date(eyear, emonth, 1);
-    const elastDay = new Date(eyear, emonth + 1, 0);
+    const efirstDayT = new Date(eyear, emonth, 1);
+    const isoString1 = efirstDayT.toISOString(); // Converts to ISO string
+    const efirstDay = isoString1.split('T')[0];
+   
+    
+    const elastDayT = new Date(eyear, emonth + 1, 0);
+    const isoString2 = elastDayT.toISOString(); // Converts to ISO string
+    const elastDay = isoString2.split('T')[0];
+    
+    const daysInMonth = lastDay.getDate();
     
     const calData = {
         
