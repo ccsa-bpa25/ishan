@@ -27,8 +27,8 @@ module.exports = async (req, res) => {
       }
 
       // If password matches, return a success message
-            console.log("test")
-      console.log('data',data);
+                const dataArray = data;
+        console.log('Data stored in array:', dataArray);
         return res.status(200).json({ message: data });
         
 
