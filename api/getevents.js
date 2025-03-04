@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       const { data, error } = await supabase
         .from('events')
         .select()
-      .like('eventdate','2025%');
+        .like('eventdate','2025%');
         //.eq('username', username)
         //.();
 
