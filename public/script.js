@@ -28,19 +28,19 @@ function renderCalendar() {
     
     let dayOfWeek = firstDay.getDay();
     
-     const emonthYear = document.getElementById('monthYear');
-    const ecalendarBody = document.getElementById('calendar-body');
+     //const emonthYear = document.getElementById('monthYear');
+   // const ecalendarBody = document.getElementById('calendar-body');
     
-    const emonth = currentDate.getMonth();
-    const eyear = currentDate.getFullYear();
+    //const emonth = currentDate.getMonth();
+    //const eyear = currentDate.getFullYear();
     
-    const efirstDayT = new Date(eyear, emonth, 1);
-    const isoString1 = efirstDayT.toISOString(); // Converts to ISO string
+    //const efirstDayT = new Date(eyear, emonth, 1);
+    const isoString1 = firstDay.toISOString(); // Converts to ISO string
     const efirstDay = isoString1.split('T')[0];
    
     
-    const elastDayT = new Date(eyear, emonth + 1, 0);
-    const isoString2 = elastDayT.toISOString(); // Converts to ISO string
+    //const elastDayT = new Date(eyear, emonth + 1, 0);
+    const isoString2 = lastDay.toISOString(); // Converts to ISO string
     const elastDay = isoString2.split('T')[0];
     
     //const daysInMonth = lastDay.getDate();
