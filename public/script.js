@@ -67,7 +67,8 @@ function renderCalendar() {
     return {
         title: item.name, // Rename 'name' to 'fullName'
         date: item.eventdate,      // Rename 'age' to 'years'
-        details: item.description
+        details: item.description,
+        id:item.id
     };
 });
             console.log(events);
