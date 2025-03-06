@@ -12,12 +12,12 @@ module.exports = async (req, res) => {
       //alert(username);
       //alert(password);
       //alert(Date);
-    const { username, password, eventdate } = req.body;
+    const { id } = req.body;
 
     // Validate that username and password are provided
-    if (!username || !password) {
-      return res.status(400).json({ error: 'Username and password are required.' });
-    }
+    //if (!username || !password) {
+      //return res.status(400).json({ error: 'Username and password are required.' });
+    //}
 
     try {
       // Check if the username already exists in the PostgreSQL 'users' table
@@ -37,22 +37,16 @@ module.exports = async (req, res) => {
       // Insert user data into the PostgreSQL database (additional table in Supabase)
       const { data, error: dbError } = await supabase
         .from('events')
-        .insert([
-          {
-            
-            name:username ,
-            description: password,
-            eventdate: eventdate  
-          },
-        ]);
-
+        .delete()
+        .eq(id,id)
+      }
       if (dbError) {
-        console.error('Error inserting into database:', dbError);
-        return res.status(500).json({ error: 'Error inserting event into database.', details: dbError });
+        console.error('Error deleting from the database:', dbError);
+        return res.status(500).json({ error: 'Error deleting event from the database.', details: dbError });
       }
 
       // Send a success response
-      return res.status(201).json({ message: 'Event registered successfully!', user: data });
+      return res.status(201).json({ message: 'Event deleted successfully!', user: data });
     } catch (err) {
       console.error('Error:', err.message);
       return res.status(500).json({ error: 'Internal Server Error.' });

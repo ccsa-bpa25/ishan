@@ -216,7 +216,7 @@ function closeModal() {
 }
 
 function updateEvent() {
-    alert("inside update calendar");
+    //alert("inside update calendar");
     const title = document.getElementById('eventTitle').value;
     const details = document.getElementById('eventDetails').value;
 
@@ -227,8 +227,8 @@ function updateEvent() {
     closeModal();
 }
 
-function deleteEvent() {
-    alert("inside delete calendar");
+function deleteEvent(id) {
+   //alert("inside delete calendar");
     // Delete the event
     events.splice(selectedEventIndex, 1);
     
@@ -238,7 +238,7 @@ function deleteEvent() {
 
 function previousMonth() {
     events=[];    
-    alert("inside previous calendar");
+    //alert("inside previous calendar");
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar();
 }
