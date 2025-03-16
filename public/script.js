@@ -15,7 +15,7 @@ function renderCalendar() {
     console.log('inside render calendar');
     const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendar-body');
-    
+    const eventData;
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
     const syear = year.toString();
@@ -150,6 +150,10 @@ const eventexist = events.some(event => {
         selectedEventID=event.id;
         console.log("event id -"+selectedEventID);
         
+        eventData = {
+        ev_id: selectedEventID 
+      };
+        
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
     } else {
@@ -231,10 +235,31 @@ function updateEvent() {
     closeModal();
 }
 
-function deleteEvent(id) {
+function deleteEvent() {
    //alert("inside delete calendar");
     // Delete the event
     events.splice(selectedEventIndex, 1);
+    
+                fetch('/api/deleteevent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventDataData)
+      })
+                
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
+        } else {
+          document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
+        }
+      })
+      .catch(error => {
+        document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      });
+           
     
     renderCalendar();
     closeModal();
