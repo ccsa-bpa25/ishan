@@ -148,7 +148,7 @@ const eventexist = events.some(event => {
         document.getElementById('eventDetails').value = event.details;
         selectedEventIndex = events.indexOf(event);
         selectedEventID=event.id;
-        console.log("event id -"selectedEventID);
+        console.log("event id -"+selectedEventID);
         
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
