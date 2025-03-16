@@ -239,7 +239,7 @@ function updateEvent() {
 function deleteEvent() {
    //alert("inside delete calendar");
     // Delete the event
-   // events.splice(selectedEventIndex, 1);
+   events.splice(selectedEventIndex, 1);
     
                 fetch('/api/deleteevent', {
         method: 'POST',
