@@ -106,6 +106,8 @@ function renderCalendar() {
                 const hasEvent = events.some(event => {
     const eventDate = new Date(event.date).toISOString().split('T')[0]; // Format the date to 'YYYY-MM-DD'
     return eventDate === exactDate;
+                    
+                    
 });
                 
                 
@@ -125,7 +127,7 @@ function renderCalendar() {
 
 function openEventModal(day,edate) {
     console.log(typeof edate);
-    console.log("inside open event modal"+day+"-"+edate);
+    console.log("inside open event modal-"+day+"-"+edate);
     const modal = document.getElementById('eventModal');
     modal.style.display = 'flex';
     
@@ -145,6 +147,8 @@ const eventexist = events.some(event => {
         document.getElementById('eventTitle').value = event.title;
         document.getElementById('eventDetails').value = event.details;
         selectedEventIndex = events.indexOf(event);
+        selectedEventID=event.id;
+        console.log("event id -"selectedEventID);
         
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
