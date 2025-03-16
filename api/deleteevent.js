@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
       const { data, error: dbError } = await supabase
         .from('events')
         .delete()
-        .eq(id,id)
+        .eq('id',id)
       
       if (dbError) {
         console.error('Error deleting from the database:', dbError);
