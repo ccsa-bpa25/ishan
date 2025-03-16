@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
         .from('events')
         .delete()
         .eq(id,id)
-      }
+      
       if (dbError) {
         console.error('Error deleting from the database:', dbError);
         return res.status(500).json({ error: 'Error deleting event from the database.', details: dbError });
