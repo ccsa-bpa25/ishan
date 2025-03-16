@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
       //alert(username);
       //alert(password);
       //alert(Date);
-    const { id } = req.body;
+    const { ev_id } = req.body;
 
     // Validate that username and password are provided
     //if (!username || !password) {
@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
       const { data, error: dbError } = await supabase
         .from('events')
         .delete()
-        .eq('id',id)
+        .eq('id',ev_id)
       
       if (dbError) {
         console.error('Error deleting from the database:', dbError);
