@@ -167,6 +167,7 @@ const eventexist = events.some(event => {
         
         // Hide Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'none';
+        document.getElementById('addbutton').style.display = 'block';
     }
 
     // Handle form submission for adding or updating events
