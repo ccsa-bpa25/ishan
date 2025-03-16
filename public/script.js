@@ -153,6 +153,7 @@ const eventexist = events.some(event => {
         eventData = {
         ev_id: selectedEventID 
       };
+        console.log("event data -"+eventData);
         
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
@@ -238,14 +239,14 @@ function updateEvent() {
 function deleteEvent() {
    //alert("inside delete calendar");
     // Delete the event
-    events.splice(selectedEventIndex, 1);
+   // events.splice(selectedEventIndex, 1);
     
                 fetch('/api/deleteevent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(eventDataData)
+        body: JSON.stringify(eventData)
       })
                 
       .then(response => response.json())
