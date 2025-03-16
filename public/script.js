@@ -157,6 +157,7 @@ const eventexist = events.some(event => {
         
         // Show Update and Delete buttons
         document.getElementById('updateDeleteButtons').style.display = 'block';
+        document.getElementById('addbutton').style.display = 'none';
     } else {
          console.log("event no");
         document.getElementById('modalTitle').textContent = "Add Event";
