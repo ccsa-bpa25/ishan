@@ -15,7 +15,7 @@ function renderCalendar() {
     console.log('inside render calendar');
     const monthYear = document.getElementById('monthYear');
     const calendarBody = document.getElementById('calendar-body');
-    const eventData;
+    const eventData="";
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
     const syear = year.toString();
