@@ -3,228 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="main.css">
-    <meta charset="UTF-8">
-   
-    <title>Interactive Calendar</title>
- 
-
+  <title>Signup and Login</title>
 </head>
 <body>
-    <main>
-      <style>
-          <nav>
-      nav ul li:hover {
-    background-color: #D1B89E; 
-}
-nav ul li.active {
-    background-color: #D1B89E; 
-}
-    nav .nav-inner {
-            display: flex;
-            justify-content: space-between;  
-            align-items: center;
-            padding: 10px 30px;
-            width: 100%;
-        }
+  <h2>Signup</h2>
+  <form id="signupForm">
+    <label for="signupUsername">Username:</label>
+    <input type="text" id="signupUsername" name="username" required><br><br>
 
-       
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            padding: 10;
-            margin: 0;
-            justify-content: space-between; 
-            width: 100%;
-        }
+    <label for="signupPassword">Password:</label>
+    <input type="password" id="signupPassword" name="password" required><br><br>
 
-        nav ul li {
-            flex-shrink: 0;
-        }
-        nav ul li:hover {
-    background-color: #D1B89E; 
-}
-nav a:hover {
-    background-color: #D1B89E; 
-    color: black; 
-}
-header {
-  background-color: #d8bfd8; 
-  color: white;
-  padding: 20px;
-  nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-}
-        nav a {
-            color: black;
-            text-decoration: none;
-            padding: 20px 20px; 
-            font-size: 14px; 
-            white-space: nowrap;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    <button type="submit">Sign Up</button>
+  </form>
 
-       
-        nav a:hover {
-            background-color: #D1B89E; 
-            color: black;
-        }
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="loginUsername">Username:</label>
+    <input type="text" id="loginUsername" name="username" required><br><br>
 
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            flex-direction: column;
-        }
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" name="password" required><br><br>
 
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    <button type="submit">Log In</button>
+  </form>
 
-       
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
+  <div id="message"></div>
 
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: scrollReveal 1.5s forwards;
-        }
-
-        @keyframes scrollReveal {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-          #torch-awards {
-            padding: 50px 20px;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-         h1, h3 {
-            color: #333;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .dropdown-content a:hover {
-            background-color: #D1B89E;
-            color: black;
-        }
-
-        .arrow {
-            font-size: 12px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-
-        
-        .hamburger-menu {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 25px;
-        }
-
-        .hamburger-menu div {
-            height: 4px;
-            background-color: black;
-            border-radius: 2px;
-        }
-        
-           
-        #eventsLink {
-    color: black; 
-    text-decoration: none; 
-}
-        @media (max-width: 768px) {
-            .nav-inner {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-           
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #fff;
-            }
-
-            nav ul li a {
-                padding: 10px 20px;
-                width: 100%;
-                text-align: left;
-            }
-
-           
-            .hamburger-menu {
-                display: flex;
-            }
-            
-            .nav-inner.active ul {
-                display: flex;
-            }
-
-            
-            nav ul li a {
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-        }
-    </style>
-               </nav>
-    
-  
-  
   <script>
     // Handle signup form submission
-    /*document.getElementById('signupForm').addEventListener('submit', function(event) {
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
 
       const username = document.getElementById('signupUsername').value;
@@ -285,54 +93,7 @@ header {
       .catch(error => {
         document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
       });
-    });*/
+    });
   </script>
-
-
-    
-    <div class="calendar">
-        <div class="calendar-header">
-            <button onclick="previousMonth()">&#8592;</button>
-            <h2 id="monthYear"></h2>
-            <button onclick="nextMonth()">&#8594;</button>
-        </div>
-        <table id="calendar-table">
-            <thead>
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody id="calendar-body">
-                <!-- Calendar days will go here -->
-            </tbody>
-        </table>
-    </div>
-    <div class="message" id="message"></div>
-
-    <!-- Modal to add, update, and delete events -->
-    <div id="eventModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle">Add Event</h2>
-            <form id="eventForm">
-                <input type="text" id="eventTitle" placeholder="Event Title" required><br>
-                <textarea id="eventDetails" placeholder="Event Details" required></textarea><br>
-                <div id="addbutton"><button type="submit">Add Event</button></div>
-            </form>
-            <!-- Update/Delete buttons -->
-            <div id="updateDeleteButtons" style="display:none;">
-                <button id="updateBtn" onclick="updateEvent()">Update Event</button>
-                <button id="deleteBtn" onclick="deleteEvent()">Delete Event</button>
-            </div>
-        </div>
-    </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
