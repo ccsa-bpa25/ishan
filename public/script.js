@@ -230,7 +230,31 @@ function updateEvent() {
     //alert("inside update calendar");
     const title = document.getElementById('eventTitle').value;
     const details = document.getElementById('eventDetails').value;
-
+    
+            eventData = {
+        tile: title,
+        details: details,
+        ev_id: selectedEventID 
+      };
+               fetch('/api/updateevent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventData)
+      })
+                
+      .then(response => response.json())
+      .then(data => {
+        if (data.message) {
+          document.getElementById('message').innerHTML = `<p style="color: green;">${data.message}</p>`;
+        } else {
+          document.getElementById('message').innerHTML = `<p style="color: red;">${data.error}</p>`;
+        }
+      })
+      .catch(error => {
+        document.getElementById('message').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      });
     // Update the event
     events[selectedEventIndex] = { date: `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${new Date(events[selectedEventIndex].date).getDate()}`, title, details };
 
