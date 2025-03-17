@@ -232,7 +232,7 @@ function updateEvent() {
     const details = document.getElementById('eventDetails').value;
     
             eventData = {
-        tile: title,
+        title: title,
         details: details,
         ev_id: selectedEventID 
       };
